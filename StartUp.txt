@@ -1,0 +1,7 @@
+Java Version: 11 JDK
+
+To Start:
+
+1) Please change Datasource url, username and password in application.properties, of MYSQL Database
+
+2) Change file.upload-dir value in application.properties, to some local/server path
