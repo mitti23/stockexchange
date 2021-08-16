@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "a04b66c1-c6a7-433e-9f49-9336ff95a5a7",
+		"name": "StockExchange Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Upload File",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Mitti/Downloads/dow_jones_index/dow_jones_index.data"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/stockmarket/uploadFile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stockmarket",
+						"uploadFile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Record",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " \t{  \t\r\n\t\"quarter\":1,\r\n\t\"stock\":\"AA\",\r\n\t\"lastBusinessDate\": \"01/07/2011\",\r\n\t\"open\":\"15.82\",\r\n\t\"high\":\"16.72\",\r\n\t\"low\":\"15.78\",\r\n\t\"close\":\"16.42\",\r\n\t\"volume\":\"239655616\",\r\n\t\"percentChangePrice\": \"3.79267\",\r\n\t\"percentChangeVolumeOverLastWk\":\"0\",\r\n\t\"previousWeeksVolume\":\"0\",\r\n\t\"nextWeeksOpen\":\"16.71\",\r\n\t\"nextWeeksClose\":\"15.97\",\r\n\t\"percentChangeNextWeeksPrice\":\"-4.42849\",\r\n\t\"daysToNextDividend\" : \"26\",\r\n\t\"percentReturnNextDividend\":\"0.576192\"\r\n\t}\r\n\t  \r\n "
+				},
+				"url": {
+					"raw": "http://localhost:8080/stockmarket",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stockmarket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " \t{  \t\r\n\t\"quarter\":1,\r\n\t\"stock\":\"AA\",\r\n\t\"lastBusinessDate\": \"01/07/2011\",\r\n\t\"open\":\"15.82\",\r\n\t\"high\":\"16.72\",\r\n\t\"low\":\"15.78\",\r\n\t\"close\":\"16.42\",\r\n\t\"volume\":\"239655616\",\r\n\t\"percentChangePrice\": \"3.79267\",\r\n\t\"percentChangeVolumeOverLastWk\":\"0\",\r\n\t\"previousWeeksVolume\":\"0\",\r\n\t\"nextWeeksOpen\":\"16.71\",\r\n\t\"nextWeeksClose\":\"15.97\",\r\n\t\"percentChangeNextWeeksPrice\":\"-4.42849\",\r\n\t\"daysToNextDividend\" : \"26\",\r\n\t\"percentReturnNextDividend\":\"0.576192\"\r\n\t}\r\n\t  \r\n "
+				},
+				"url": {
+					"raw": "http://localhost:8080/stockmarket?stock=AA&quarter=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stockmarket"
+					],
+					"query": [
+						{
+							"key": "stock",
+							"value": "AA"
+						},
+						{
+							"key": "quarter",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
